@@ -1,0 +1,12 @@
+<launch>
+<include file="$(find rosplan_stage_demo)/launch/empty_stage_single_robot.launch"/>
+<include file="$(find speech_database)/launch/speech.launch"/>
+<node
+        pkg="second_coursework"
+        type="itr_cwAI24"
+        name="cw_ai_videos_node"
+        output="screen"
+        args="/home/k23015707/ros_ws/src/my_testing/cw_ai_videos" />
+<node pkg="second_coursework" type="yolo_ros.py" name="yolo_server"/>
+<node pkg="second_coursework" type="main_node.py" name="main_node"/>
+</launch>
